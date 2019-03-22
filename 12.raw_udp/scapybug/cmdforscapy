@@ -1,0 +1,9 @@
+DATA=RadioTap("aaaa0000".decode('hex'))
+fra=Ether(dst="00:00:00:00:00:00")/IP(dst="127.0.0.1",src="127.0.0.1",flags=0b010,id=15489)/UDP(sport=37037,dport=62000)/DATA
+sendp(fra, iface='lo')
+
+
+
+DATA=RadioTap("aaaa0000".decode('hex'))
+fra=IP(dst="127.0.0.1",src="127.0.0.1",flags=0b010,id=15489)/UDP(sport=37037,dport=62000)/DATA
+sendp(fra, iface='lo')
